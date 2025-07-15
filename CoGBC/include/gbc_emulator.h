@@ -3,16 +3,17 @@
 #include <string>
 
 #include <SDL3/SDL.h>
+#include <wx/wx.h>
 
 #include "gbc_debugger.h"
 #include "cpu.h"
 #include "bus.h"
 #include "wram.h"
 
-class GBC {
+class GBCEmulator {
     public:
-        GBC();
-        ~GBC();
+        GBCEmulator();
+        ~GBCEmulator();
         
         static bool is_debugging();
 

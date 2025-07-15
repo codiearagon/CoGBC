@@ -18,36 +18,54 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GBC\src\gbc\bus.cpp">
+    <ClCompile Include="src\wx\gbc_app.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GBC\src\gbc\cpu.cpp">
+    <ClCompile Include="src\bus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GBC\src\gbc\gbc.cpp">
+    <ClCompile Include="src\cpu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GBC\src\gbc\gbc_debugger.cpp">
+    <ClCompile Include="src\gbc_emulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gbc_debugger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wx\gbc_main_frame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\GBC\src\gbc\bus.h">
+    <ClInclude Include="include\wx\gbc_app.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\GBC\src\gbc\cpu.h">
+    <ClInclude Include="include\wx\gbc_main_frame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\GBC\src\gbc\gbc.h">
+    <ClInclude Include="include\bus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\GBC\src\gbc\gbc_debugger.h">
+    <ClInclude Include="include\cpu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\GBC\src\gbc\opcode_info.h">
+    <ClInclude Include="include\gbc_emulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\GBC\src\gbc\tft.h">
+    <ClInclude Include="include\gbc_debugger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opcode_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

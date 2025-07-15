@@ -1,11 +1,4 @@
-#include <iostream>
+#include "wx/gbc_app.h"
 
-#include <SDL3/SDL.h>
-
-#include "gbc.h"
-
-int main(int argc, char **argv) {
-	GBC gbc;
-
-	return 0;
-}
+//wxIMPLEMENT_APP(GBCApp);
+wxIMPLEMENT_APP_CONSOLE(GBCApp);

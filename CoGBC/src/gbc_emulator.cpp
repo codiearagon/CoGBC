@@ -1,9 +1,9 @@
-#include "gbc.h"
+#include "gbc_emulator.h"
 
 #include <fstream>
 #include <iostream>
 
-GBC::GBC() {
+GBCEmulator::GBCEmulator() {
     std::cout << "Initializing GBC" << std::endl;
 
     debugging_enabled = false;
@@ -13,15 +13,15 @@ GBC::GBC() {
     bus.connect_components(&cpu, &wram);
 }
 
-GBC::~GBC() {
+GBCEmulator::~GBCEmulator() {
     close();
 }
 
-bool GBC::is_debugging() {
+bool GBCEmulator::is_debugging() {
     return debugging_enabled;
 }
 
-void GBC::load_rom(std::string file_name) {
+void GBCEmulator::load_rom(std::string file_name) {
     std::ifstream file(file_name, std::ios::binary | std::ios::ate);
 
     if(!file) {
@@ -36,22 +36,23 @@ void GBC::load_rom(std::string file_name) {
     file.close();
 
     for(long i = 0; i < size; ++i) {
+        std::cout << "reading: " << buffer[i] << std::endl;
     }
 
     delete[] buffer;
 }
 
-void GBC::open_debugger() {
+void GBCEmulator::open_debugger() {
     debugging_enabled = true;
     gbc_debugger.show_debugger();
 }
 
-void GBC::close_debugger() {
+void GBCEmulator::close_debugger() {
     debugging_enabled = false;
     gbc_debugger.hide_debugger();
 }
 
-void GBC::run() {
+void GBCEmulator::run() {
     emulator_running = true;
     open_debugger();
     
@@ -62,14 +63,14 @@ void GBC::run() {
     }
 }
 
-void GBC::close() {
+void GBCEmulator::close() {
     debugging_enabled = false;
     emulator_running = false;
 
     SDL_Quit();
 }
 
-void GBC::handle_events() {
+void GBCEmulator::handle_events() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         switch(event.type) {
@@ -80,6 +81,6 @@ void GBC::handle_events() {
     }
 }
 
-void GBC::handle_window_events(SDL_Event& event) {
+void GBCEmulator::handle_window_events(SDL_Event& event) {
 
 }

@@ -78,7 +78,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Files\PersonalDocuments\RandomProjs\CoGBC\CoGBC\include;C:\Libraries\SDL3\3.2.18\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -96,7 +96,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Files\PersonalDocuments\RandomProjs\CoGBC\CoGBC\include;C:\Libraries\SDL3\3.2.18\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Files\PersonalDocuments\RandomProjs\CoGBC\CoGBC\include;C:\Libraries\SDL3\3.2.18\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -130,7 +130,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Files\PersonalDocuments\RandomProjs\CoGBC\CoGBC\include;C:\Libraries\SDL3\3.2.18\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -143,17 +143,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\wx\gbc_app.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\bus.cpp" />
     <ClCompile Include="src\cpu.cpp" />
-    <ClCompile Include="src\gbc.cpp" />
+    <ClCompile Include="src\gbc_emulator.cpp" />
     <ClCompile Include="src\gbc_debugger.cpp" />
     <ClCompile Include="src\wram.cpp" />
+    <ClCompile Include="src\wx\gbc_main_frame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\wx\gbc_app.h" />
+    <ClInclude Include="include\wx\gbc_main_frame.h" />
     <ClInclude Include="include\bus.h" />
     <ClInclude Include="include\cpu.h" />
-    <ClInclude Include="include\gbc.h" />
+    <ClInclude Include="include\gbc_emulator.h" />
     <ClInclude Include="include\gbc_debugger.h" />
     <ClInclude Include="include\opcode_info.h" />
     <ClInclude Include="include\tft.h" />
