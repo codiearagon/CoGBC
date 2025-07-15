@@ -4,6 +4,8 @@
 #include <iostream>
 
 GBC::GBC() {
+    std::cout << "Initializing GBC" << std::endl;
+
     debugging_enabled = false;
 
     cpu.connect_bus(&bus);
