@@ -2,7 +2,7 @@
 #include "wx/gbc_main_frame.h"
 
 bool GBCApp::OnInit() {
-	GBCMainFrame* frame = new GBCMainFrame();
-	frame->Show();
+	GBCMainFrame *main_frame = new GBCMainFrame();
+	main_frame->Show();
 	return true;
 }

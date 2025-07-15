@@ -148,7 +148,7 @@
     <ClCompile Include="src\bus.cpp" />
     <ClCompile Include="src\cpu.cpp" />
     <ClCompile Include="src\gbc_emulator.cpp" />
-    <ClCompile Include="src\gbc_debugger.cpp" />
+    <ClCompile Include="src\wx\gbc_debugger.cpp" />
     <ClCompile Include="src\wram.cpp" />
     <ClCompile Include="src\wx\gbc_main_frame.cpp" />
   </ItemGroup>
@@ -158,7 +158,7 @@
     <ClInclude Include="include\bus.h" />
     <ClInclude Include="include\cpu.h" />
     <ClInclude Include="include\gbc_emulator.h" />
-    <ClInclude Include="include\gbc_debugger.h" />
+    <ClInclude Include="include\wx\gbc_debugger.h" />
     <ClInclude Include="include\opcode_info.h" />
     <ClInclude Include="include\tft.h" />
     <ClInclude Include="include\wram.h" />

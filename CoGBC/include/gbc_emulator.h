@@ -5,7 +5,7 @@
 #include <SDL3/SDL.h>
 #include <wx/wx.h>
 
-#include "gbc_debugger.h"
+#include "wx/gbc_debugger.h"
 #include "cpu.h"
 #include "bus.h"
 #include "wram.h"
@@ -27,7 +27,7 @@ class GBCEmulator {
         inline static bool debugging_enabled;
         bool emulator_running;
 
-        GBCDebugger gbc_debugger;
+        GBCDebugger *gbc_debugger;
         CPU cpu;
         WRAM wram;
         Bus bus;

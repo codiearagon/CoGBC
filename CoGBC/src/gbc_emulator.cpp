@@ -5,7 +5,8 @@
 
 GBCEmulator::GBCEmulator() {
     std::cout << "Initializing GBC" << std::endl;
-
+    
+    gbc_debugger = new GBCDebugger();
     debugging_enabled = false;
 
     cpu.connect_bus(&bus);
@@ -44,22 +45,21 @@ void GBCEmulator::load_rom(std::string file_name) {
 
 void GBCEmulator::open_debugger() {
     debugging_enabled = true;
-    gbc_debugger.show_debugger();
+    gbc_debugger->Show();
 }
 
 void GBCEmulator::close_debugger() {
     debugging_enabled = false;
-    gbc_debugger.hide_debugger();
+    gbc_debugger->Hide();
 }
 
 void GBCEmulator::run() {
     emulator_running = true;
-    open_debugger();
     
     while(emulator_running) {
         handle_events();
         
-        if(debugging_enabled) gbc_debugger.draw(); // only trigger debugger drawing if it debugger is open
+        if(debugging_enabled) gbc_debugger->Draw(); // only trigger debugger drawing if it debugger is open
     }
 }
 

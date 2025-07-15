@@ -30,7 +30,7 @@
     <ClCompile Include="src\gbc_emulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\gbc_debugger.cpp">
+    <ClCompile Include="src\wx\gbc_debugger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\wram.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="include\gbc_emulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\gbc_debugger.h">
+    <ClInclude Include="include\wx\gbc_debugger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\opcode_info.h">

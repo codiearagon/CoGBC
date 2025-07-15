@@ -19,6 +19,7 @@ GBCMainFrame::GBCMainFrame() : wxFrame(nullptr, wxID_ANY, "CoGBC") {
     menuBar->Append(menuTools, "&Tools");
     menuBar->Append(menuHelp, "&Help");
 
+    SetBackgroundColour(wxColour(0, 0, 0, 0));
     SetMenuBar(menuBar);
     BindCallbacks();
 }
@@ -43,7 +44,7 @@ void GBCMainFrame::OnLoadRom(wxCommandEvent& event) {
 }
 
 void GBCMainFrame::OnShowDebugger(wxCommandEvent& event) {
-
+    gbc.open_debugger();
 }
 
 void GBCMainFrame::OnAbout(wxCommandEvent& event) {
