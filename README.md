@@ -1,0 +1,1 @@
+# GBC Emulator created in C++ with SDL3 and wxWidgets
