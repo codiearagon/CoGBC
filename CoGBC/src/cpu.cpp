@@ -2,14 +2,15 @@
 
 CPU::CPU() {
     initialize_opcode_info();
-    
+
     pc = 0x0;
 }
 
 CPU::~CPU() {}
 
-void CPU::connect_bus(Bus *_bus) {
+void CPU::connect_components(Bus *_bus, GBCDebugger *_gbc_debugger) {
     bus = _bus;
+    gbc_debugger = _gbc_debugger;
 }
 
 uint16_t CPU::fetch() {

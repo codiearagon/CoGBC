@@ -19,13 +19,9 @@ GBCMainFrame::GBCMainFrame() : wxFrame(nullptr, wxID_ANY, "CoGBC") {
     menuBar->Append(menuTools, "&Tools");
     menuBar->Append(menuHelp, "&Help");
 
-    SetBackgroundColour(wxColour(0, 0, 0, 0));
+    SetBackgroundColour(wxColour(0, 0, 0, 255));
     SetMenuBar(menuBar);
     BindCallbacks();
-}
-
-void GBCMainFrame::OnExit(wxCommandEvent& event) {
-    Close(true);
 }
 
 void GBCMainFrame::OnLoadRom(wxCommandEvent& event) {
@@ -40,7 +36,7 @@ void GBCMainFrame::OnLoadRom(wxCommandEvent& event) {
         return;
     }
 
-    gbc.load_rom(openFileDialog.GetPath().ToStdString());
+    gbc.load_rom(openFileDialog.GetPath().ToStdString(), openFileDialog.GetFilename().ToStdString());
 }
 
 void GBCMainFrame::OnShowDebugger(wxCommandEvent& event) {
@@ -51,7 +47,18 @@ void GBCMainFrame::OnAbout(wxCommandEvent& event) {
     wxMessageBox("GBC Emulator made by Codie Aragon");
 }
 
+void GBCMainFrame::OnExit(wxCommandEvent& event) {
+    gbc.close();
+    Close(true);
+}
+
+void GBCMainFrame::OnClose(wxCloseEvent& event) {
+    gbc.close();
+    Close(true);
+}
+
 void GBCMainFrame::BindCallbacks() {
+    Bind(wxEVT_CLOSE_WINDOW, &GBCMainFrame::OnClose, this);
     Bind(wxEVT_MENU, &GBCMainFrame::OnLoadRom, this, ID_LoadRom);
     Bind(wxEVT_MENU, &GBCMainFrame::OnShowDebugger, this, ID_ShowDebugger);
     Bind(wxEVT_MENU, &GBCMainFrame::OnAbout, this, wxID_ABOUT);

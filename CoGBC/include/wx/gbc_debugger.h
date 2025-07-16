@@ -1,28 +1,28 @@
+#pragma once
+
 #include <vector>
 #include <wx/wx.h>
+#include <wx/listctrl.h>
 #include "opcode_info.h"
 
 #define DEBUGGER_HEIGHT 600
 #define DEBUGGER_WIDTH 600
 
 class GBCDebugger : public wxFrame {
-    public:
-        GBCDebugger();
-        ~GBCDebugger();
+public:
+    GBCDebugger();
+    ~GBCDebugger();
 
-        //void log_message(std::string message);
-        //void log_instruction(opcode_info current_op);
-        //void log_status();
+    void log_message(std::string message);
+    void log_instruction(opcode_info current_op);
+    void log_status();
 
-        void Draw();
+private:
+    wxPanel *info_panel;
+    wxPanel *list_panel;
 
-        void Cleanup();
-    private:
-        // area containers, will not be rendered
+    wxListBox *inst_history;
+    wxListBox *msg_history;
 
-        std::vector<std::string> message_history;
-        std::vector<opcode_info> inst_history;
-
-        void OnClose(wxCloseEvent& event);
-        //void draw_panel();
+    void OnClose(wxCloseEvent& event);
 };

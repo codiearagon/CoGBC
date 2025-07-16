@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "opcode_info.h"
+#include "wx/gbc_debugger.h"
 #include "bus.h"
 
 class Bus;
@@ -14,7 +15,7 @@ class CPU {
         CPU();
         ~CPU();
         
-        void connect_bus(Bus *bus);
+        void connect_components(Bus *_bus, GBCDebugger *_gbc_debugger);
         uint16_t fetch();
         void decode();
         void alu(uint8_t in1, uint8_t in2, uint16_t output);
@@ -22,6 +23,7 @@ class CPU {
 
     private:
         std::unordered_map<uint8_t, opcode_info> inst_set;
+        GBCDebugger *gbc_debugger;
 
         Bus *bus;
 

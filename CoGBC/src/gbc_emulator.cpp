@@ -4,29 +4,30 @@
 #include <iostream>
 
 GBCEmulator::GBCEmulator() {
-    std::cout << "Initializing GBC" << std::endl;
-    
     gbc_debugger = new GBCDebugger();
     debugging_enabled = false;
 
-    cpu.connect_bus(&bus);
+    cpu.connect_components(&bus, gbc_debugger);
     wram.connect_bus(&bus);
     bus.connect_components(&cpu, &wram);
+
+    gbc_debugger->log_instruction(opcode_info{ "LD A B", 1, "2", 'Z', '0', '1', '-' });
 }
 
 GBCEmulator::~GBCEmulator() {
-    close();
 }
 
 bool GBCEmulator::is_debugging() {
     return debugging_enabled;
 }
 
-void GBCEmulator::load_rom(std::string file_name) {
-    std::ifstream file(file_name, std::ios::binary | std::ios::ate);
+void GBCEmulator::load_rom(std::string file_path, std::string file_name) {
+    gbc_debugger->log_message("Loading rom: " + file_name);
+
+    std::ifstream file(file_path, std::ios::binary | std::ios::ate);
 
     if(!file) {
-        std::cerr << "Failed to open file\n";
+        gbc_debugger->log_message("Failed to load rom: " + file_name);
         return;
     }
     
@@ -37,7 +38,7 @@ void GBCEmulator::load_rom(std::string file_name) {
     file.close();
 
     for(long i = 0; i < size; ++i) {
-        std::cout << "reading: " << buffer[i] << std::endl;
+        
     }
 
     delete[] buffer;
@@ -58,8 +59,6 @@ void GBCEmulator::run() {
     
     while(emulator_running) {
         handle_events();
-        
-        if(debugging_enabled) gbc_debugger->Draw(); // only trigger debugger drawing if it debugger is open
     }
 }
 

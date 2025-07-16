@@ -17,7 +17,7 @@ class GBCEmulator {
         
         static bool is_debugging();
 
-        void load_rom(std::string file_name);
+        void load_rom(std::string file_path, std::string file_name);
         void open_debugger();
         void close_debugger();
 

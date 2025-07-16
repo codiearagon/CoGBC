@@ -20,6 +20,7 @@ private:
 	void OnShowDebugger(wxCommandEvent& event);
 	void OnExit(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
+	void OnClose(wxCloseEvent& event);
 
 	void BindCallbacks();
 };
