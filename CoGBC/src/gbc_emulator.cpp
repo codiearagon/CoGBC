@@ -12,6 +12,9 @@ GBCEmulator::GBCEmulator() {
     bus.connect_components(&cpu, &wram);
 
     gbc_debugger->log_instruction(opcode_info{ "LD A B", 1, "2", 'Z', '0', '1', '-' });
+    gbc_debugger->set_register("h", 101);
+    gbc_debugger->set_flag("c", true);
+    gbc_debugger->set_flag("p", false);
 }
 
 GBCEmulator::~GBCEmulator() {

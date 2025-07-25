@@ -15,7 +15,8 @@ public:
 
     void log_message(std::string message);
     void log_instruction(opcode_info current_op);
-    void log_status();
+    void set_register(std::string reg, uint8_t value);
+    void set_flag(std::string flag, bool value);
 
 private:
     wxPanel *info_panel;
@@ -34,6 +35,16 @@ private:
     wxStaticText* c_info_flag;
 
     // cpu state
+    wxStaticText* a_reg;
+    wxStaticText* f_reg;
+    wxStaticText* b_reg;
+    wxStaticText* c_reg;
+    wxStaticText* d_reg;
+    wxStaticText* e_reg;
+    wxStaticText* h_reg;
+    wxStaticText* l_reg;
+    wxStaticText* sp;
+    wxStaticText* pc;
     wxCheckBox* z_current_flag;
     wxCheckBox* n_current_flag;
     wxCheckBox* h_current_flag;
