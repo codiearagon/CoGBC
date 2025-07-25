@@ -30,14 +30,11 @@ class CPU {
         uint16_t pc;
         uint16_t sp;
 
-        // AF registers
-        uint8_t a;
-        uint8_t f;
-
-        // general-purpose registers (BC, DE, HL)
-        uint16_t bc;
-        uint16_t de;
-        uint16_t hl;
+        // registers
+        uint8_t a, f;
+        uint8_t b, c;
+        uint8_t d, e;
+        uint8_t h, l;
 
         // special-purpose registers (IR, IE)
         uint8_t inst_reg;

@@ -24,5 +24,20 @@ private:
     wxListBox *inst_history;
     wxListBox *msg_history;
 
+    // opcode info
+    wxStaticText* mnemonic_info;
+    wxStaticText* bytes_info;
+    wxStaticText* ticks_info;
+    wxStaticText* z_info_flag;
+    wxStaticText* n_info_flag;
+    wxStaticText* h_info_flag;
+    wxStaticText* c_info_flag;
+
+    // cpu state
+    wxCheckBox* z_current_flag;
+    wxCheckBox* n_current_flag;
+    wxCheckBox* h_current_flag;
+    wxCheckBox* c_current_flag;
+
     void OnClose(wxCloseEvent& event);
 };
