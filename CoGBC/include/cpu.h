@@ -15,7 +15,7 @@ class CPU {
         CPU();
         ~CPU();
         
-        void connect_components(Bus *_bus, GBCDebugger *_gbc_debugger);
+        void connect_components(GBCDebugger* _gbc_debugger, Bus *_bus);
         uint16_t fetch();
         void decode();
         void alu(uint8_t in1, uint8_t in2, uint16_t output);

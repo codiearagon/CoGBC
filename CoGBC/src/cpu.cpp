@@ -8,7 +8,7 @@ CPU::CPU() {
 
 CPU::~CPU() {}
 
-void CPU::connect_components(Bus *_bus, GBCDebugger *_gbc_debugger) {
+void CPU::connect_components(GBCDebugger* _gbc_debugger, Bus *_bus) {
     bus = _bus;
     gbc_debugger = _gbc_debugger;
 }

@@ -7,7 +7,7 @@ GBCEmulator::GBCEmulator() {
     gbc_debugger = new GBCDebugger();
     debugging_enabled = false;
 
-    cpu.connect_components(&bus, gbc_debugger);
+    cpu.connect_components(gbc_debugger, &bus);
     wram.connect_bus(&bus);
     bus.connect_components(&cpu, &wram);
 
